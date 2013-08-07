@@ -1,0 +1,7 @@
+*.dat
+*.swp
+
+obj/*
+bin/*
+dat/*
+
