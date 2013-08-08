@@ -11,10 +11,11 @@
 #include <complex>
 
 int main(int argc, char** argv){
-  uint m=4,p=3;
-  multiset c(m,p);
-  for (uint i=0; i<choose(m+p-1,p); i++){
-    c.fromindex(i);
-    c.print();
-  }
+  uint n=4,p=3;
+  multiset m(n,p);
+  combination c(n+p-1,p);
+  do{
+    m.print();
+    std::cout << m.index() << std::endl;
+  } while (m.next());
 }

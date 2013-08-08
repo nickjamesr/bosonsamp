@@ -6,6 +6,9 @@
 //---functions---//
 long unsigned int choose(uint n, uint r){
   double out=1;
+  if (n<r){
+    return 0;
+  }
   for (uint i=1; i<=(n-r); i++){
     out *= (i+r)/(double) i;
   }
@@ -57,6 +60,15 @@ combination combination::operator=(const combination& c){
 // access
 uint& combination::operator[](uint i) const{
   return data[i];
+}
+
+long unsigned int combination::index(){
+  long unsigned int out=0;
+  long unsigned int max = choose(m,p);
+  for (uint i=1; i<=p; i++){
+    out += choose(m-data[p-i]-1,i);
+  }
+  return max-out-1;
 }
 
 // output
@@ -185,6 +197,15 @@ multiset multiset::operator=(const multiset& c){
 // access
 uint& multiset::operator[](uint i) const{
   return data[i];
+}
+
+long unsigned int multiset::index(){
+  long unsigned int out=0;
+  long unsigned int max = choose(m+p-1,p);
+  for (uint i=1; i<=p; i++){
+    out += choose(m-data[p-i]+i-2,i);
+  }
+  return max-out-1;
 }
 
 // output

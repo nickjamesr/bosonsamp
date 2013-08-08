@@ -28,6 +28,7 @@ class combination{
     void print() const;
     // access
     uint& operator[](uint) const;
+    long unsigned int index();
     // initialisation
     void first();
     void last();
@@ -56,6 +57,7 @@ class multiset{
     void print() const;
     // access
     uint& operator[](uint) const;
+    long unsigned int index();
     // initialisation
     void first();
     void last();
