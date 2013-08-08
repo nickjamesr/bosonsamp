@@ -5,13 +5,16 @@
 #include "heads/vector.h"
 #include "heads/matrix.h"
 #include "heads/permanent.h"
-#include "heads/combination.h"
+#include "heads/combinatorics.h"
 
 #include <iostream>
+#include <complex>
 
 int main(int argc, char** argv){
-  combination c(5,3);
-  do{
+  uint m=4,p=3;
+  multiset c(m,p);
+  for (uint i=0; i<choose(m+p-1,p); i++){
+    c.fromindex(i);
     c.print();
-  } while (c.next());
+  }
 }

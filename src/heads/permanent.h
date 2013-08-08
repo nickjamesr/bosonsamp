@@ -5,7 +5,7 @@
 #define permanent_h
 
 #include "matrix.h"
-#include "combination.h"
+#include "combinatorics.h"
 
 template <class T>
 inline T permanent1(matrix<T>);
