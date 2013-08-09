@@ -6,8 +6,8 @@ docdir = doc
 utils = .gitignore makefile
 
 cc = g++
-debug = -g
-opt =
+debug =
+opt = -O2
 cflags = -c $(debug) $(opt) -Wall
 lflags =
 

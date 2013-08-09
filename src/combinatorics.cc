@@ -15,6 +15,23 @@ long unsigned int choose(uint n, uint r){
   return (long unsigned int)(out+0.5);
 }
 
+double norm(multiset m){
+  double out = 1.0;
+  uint count=1, prev=m[0], curr=m[0];
+  for (uint i=1; i<m.items(); i++){
+    curr = m[i];
+    if (curr==prev){
+      count += 1;
+      out *= std::sqrt((double) count);
+    }
+    else{
+      count = 1;
+    }
+    prev = curr;
+  }
+  return 1.0/out;
+}
+
 //---combination class---//
 combination::combination(){
   m=0;
@@ -69,6 +86,14 @@ long unsigned int combination::index(){
     out += choose(m-data[p-i]-1,i);
   }
   return max-out-1;
+}
+
+uint combination::items() const{
+  return p;
+}
+
+uint combination::bins() const{
+  return m;
 }
 
 // output
@@ -197,6 +222,14 @@ multiset multiset::operator=(const multiset& c){
 // access
 uint& multiset::operator[](uint i) const{
   return data[i];
+}
+
+uint multiset::items() const{
+  return p;
+}
+
+uint multiset::bins() const{
+  return m;
 }
 
 long unsigned int multiset::index(){

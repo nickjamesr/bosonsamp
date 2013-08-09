@@ -11,11 +11,9 @@
 #include <complex>
 
 int main(int argc, char** argv){
-  uint n=4,p=3;
-  multiset m(n,p);
-  combination c(n+p-1,p);
+  multiset m(3,4);
   do{
     m.print();
-    std::cout << m.index() << std::endl;
+    std::cout << norm(m) << std::endl;
   } while (m.next());
 }

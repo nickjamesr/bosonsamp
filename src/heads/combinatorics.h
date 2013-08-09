@@ -6,8 +6,13 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
+
+class combination;
+class multiset;
 
 long unsigned int choose(uint, uint);
+double norm(multiset);
 
 class combination{
   private:
@@ -28,6 +33,8 @@ class combination{
     void print() const;
     // access
     uint& operator[](uint) const;
+    uint items() const;
+    uint bins() const;
     long unsigned int index();
     // initialisation
     void first();
@@ -58,6 +65,8 @@ class multiset{
     // access
     uint& operator[](uint) const;
     long unsigned int index();
+    uint items() const;
+    uint bins() const;
     // initialisation
     void first();
     void last();

@@ -20,6 +20,9 @@ template <class T>
 inline T permanent4(matrix<T>);
 
 template <class T>
+inline T permanent5(matrix<T>);
+
+template <class T>
 T permanent_naive(matrix<T>);
 
 template <class T>
