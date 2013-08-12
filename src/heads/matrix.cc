@@ -63,7 +63,7 @@ uint matrix<T>::size(){
 
 // Output
 template <class T>
-void matrix<T>::print(){
+void matrix<T>::print() const{
   std::cout << "matrix [\n";
   for (uint i=0; i<dim; i++){
     for (uint j=0; j<dim; j++){
@@ -73,3 +73,7 @@ void matrix<T>::print(){
   }
   std::cout << "]" << std::endl;
 }
+
+
+
+

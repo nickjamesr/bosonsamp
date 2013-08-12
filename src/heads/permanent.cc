@@ -167,7 +167,7 @@ T permanent_ryser(matrix<T> M){
         // Calculate the sum
         sum = 0;
         for (uint j=0; j<k; j++){
-          sum += M[i*n+j];
+          sum += M[i*n+c[j]];
         }
         prod *= sum;
       }

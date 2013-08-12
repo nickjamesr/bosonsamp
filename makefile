@@ -6,10 +6,10 @@ docdir = doc
 utils = .gitignore makefile
 
 cc = g++
-debug =
-opt = -O2
+debug = -g
+opt =
 cflags = -c $(debug) $(opt) -Wall
-lflags =
+lflags = -lgsl -lgslcblas -lm
 
 objects = $(subst $(srcdir),$(objdir),\
 $(patsubst %.cc,%.o,$(wildcard $(srcdir)/*.cc)))
