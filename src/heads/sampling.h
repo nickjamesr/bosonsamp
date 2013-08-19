@@ -10,6 +10,7 @@
 
 #include <complex>
 #include <gsl/gsl_rng.h>
+#include <curses.h>
 
 class sampler_exact{
   private:
@@ -17,10 +18,10 @@ class sampler_exact{
     uint p;
     uint size;
     uint seed;
+    gsl_rng* r;
   protected:
   public:
     double* cdf;
-    gsl_rng* r;
     // Constructors
     sampler_exact();
     sampler_exact(const sampler_exact&);
@@ -30,7 +31,26 @@ class sampler_exact{
     // Overloads
     sampler_exact operator=(const sampler_exact&);
     // Access
-    multiset get();
+    combination get();
+};
+
+class sampler_reject{
+  private:
+    matrix<std::complex<double> > u;
+    uint m;
+    uint seed;
+    gsl_rng* r;
+  protected:
+  public:
+    // Constructors
+    sampler_reject();
+    sampler_reject(const sampler_reject&);
+    sampler_reject(matrix<std::complex<double> >, uint init=0);
+    // Destructor
+    // Overloads
+    sampler_reject operator=(const sampler_reject&);
+    // Access
+    combination get(uint);
 };
 
 #endif
