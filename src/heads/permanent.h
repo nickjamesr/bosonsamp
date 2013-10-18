@@ -28,6 +28,9 @@ T permanent_naive(matrix<T>);
 template <class T>
 T permanent_ryser(matrix<T>);
 
+template <class T>
+T permanent(matrix<T>);
+
 class set{
   private:
   protected:
